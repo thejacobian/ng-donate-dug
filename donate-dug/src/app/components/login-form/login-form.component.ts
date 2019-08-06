@@ -23,8 +23,8 @@ export class LoginFormComponent implements OnInit {
   onSubmit() {
     (this.loginService.authenticate(this.user).subscribe(
       data => {
-        this.router.navigate(['']);
         this.invalidLogin = false;
+        this.gotoProfile();
       },
       error => {
         this.invalidLogin = true;
