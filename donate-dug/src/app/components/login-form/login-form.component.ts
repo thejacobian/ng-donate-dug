@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth-service.service';
 import { User } from '../../models/user';
 
@@ -10,22 +10,29 @@ import { User } from '../../models/user';
 })
 export class LoginFormComponent implements OnInit {
 
-  usernameText = 'jake';
-  passwordText = '';
+  user: User;
   invalidLogin = false;
 
-  constructor(private router: Router, private loginService: AuthService) { }
+  constructor(private router: Router, private loginService: AuthService) {
+    this.user = new User();
+  }
 
   ngOnInit() {
   }
 
   onSubmit() {
-    if (this.loginService.authenticate(this.usernameText, this.passwordText)
-    ) {
-      this.router.navigate(['']);
-      this.invalidLogin = false;
-    } else {
-      this.invalidLogin = true;
-    }
+    (this.loginService.authenticate(this.user).subscribe(
+      data => {
+        this.router.navigate(['']);
+        this.invalidLogin = false;
+      },
+      error => {
+        this.invalidLogin = true;
+      }
+    ));
+  }
+
+  gotoProfile() {
+    this.router.navigate(['/user/profile']);
   }
 }

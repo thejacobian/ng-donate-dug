@@ -18,7 +18,6 @@ export class UserService {
     this.httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
-        'Access-Control-Allow-Credentials': 'true',
       })
     };
   }
@@ -28,7 +27,7 @@ export class UserService {
   }
 
   public findOne(user: User) {
-    return this.http.get<User>(this.usersUrl, this.httpOptions);
+    return this.http.get<User>(`${this.usersUrl}/${user.id}`, this.httpOptions);
   }
 
   public save(user: User) {
