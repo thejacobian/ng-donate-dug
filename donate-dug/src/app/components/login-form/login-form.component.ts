@@ -14,8 +14,7 @@ export class LoginFormComponent implements OnInit {
   passwordText = '';
   invalidLogin = false;
 
-  constructor(private router: Router,
-    private loginService: AuthService) { }
+  constructor(private router: Router, private loginService: AuthService) { }
 
   ngOnInit() {
   }
@@ -25,7 +24,8 @@ export class LoginFormComponent implements OnInit {
     ) {
       this.router.navigate(['']);
       this.invalidLogin = false;
-    } else
+    } else {
       this.invalidLogin = true;
+    }
   }
 }
