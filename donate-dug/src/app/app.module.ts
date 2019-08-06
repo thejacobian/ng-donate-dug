@@ -10,6 +10,8 @@ import { LoginFormComponent } from './components/login-form/login-form.component
 import { LogoutComponent } from './components/logout/logout.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { GardenComponent } from './components/garden/garden.component';
+import { PlotComponent } from './components/plot/plot.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +21,8 @@ import { FooterComponent } from './components/footer/footer.component';
     LogoutComponent,
     HeaderComponent,
     FooterComponent,
+    GardenComponent,
+    PlotComponent,
   ],
   imports: [
     BrowserModule,
