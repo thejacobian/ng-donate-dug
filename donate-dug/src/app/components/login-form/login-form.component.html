@@ -2,13 +2,13 @@
   <div class="card-body">
     <form (ngSubmit)="onSubmit()" #userForm="ngForm">
       <div class="form-group">
-        <label for="name">Username</label>
-        <input type="text" [(ngModel)]="user.username" 
+        <label for="username">Username</label>
+        <input type="text" [(ngModel)]="usernameText" 
           class="form-control" id="username" name="username" placeholder="Enter your username"
           required #username="ngModel">
         <div [hidden]="!username.pristine" class="alert alert-danger">Username is required</div>
-        <label for="email">Password</label>
-        <input type="text" [(ngModel)]="user.password" 
+        <label for="password">Password</label>
+        <input type="text" [(ngModel)]="passwordText" 
           class="form-control" id="password" name="password" placeholder="Enter your password"
           required #password="ngModel">
         <div [hidden]="!password.pristine" class="alert alert-danger">Password is required</div>

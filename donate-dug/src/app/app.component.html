@@ -2,10 +2,11 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12">
+      <app-header></app-header>
       <div class="card bg-light my-5">
         <div class="card-body">
           <h2 class="card-title text-center py-3">{{ title }}</h2>
-          <img width="300" alt="Angular Logo" src="../assets/images/dug-logo.png">
+          <img width="300" alt="DUG Logo" src="../assets/images/dug-logo.png">
           <ul class="text-center list-inline py-3">
             <li class="list-inline-item"><a routerLink="/auth/login" class="btn btn-info">Login</a></li>
             <li class="list-inline-item"><a routerLink="/auth/register" class="btn btn-info">Register</a></li>
@@ -13,6 +14,7 @@
         </div>
       </div>
       <router-outlet></router-outlet>
+      <app-footer></app-footer>
     </div>
   </div>
 </div>

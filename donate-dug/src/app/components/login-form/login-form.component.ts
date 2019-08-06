@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { UserService } from '../../services/user-service.service';
+import { AuthService } from '../../services/auth-service.service';
 import { User } from '../../models/user';
 
 @Component({
@@ -8,19 +8,24 @@ import { User } from '../../models/user';
   templateUrl: './login-form.component.html',
   styleUrls: ['./login-form.component.scss']
 })
-export class LoginFormComponent {
+export class LoginFormComponent implements OnInit {
 
-  user: User;
+  usernameText = 'jake';
+  passwordText = '';
+  invalidLogin = false;
 
-  constructor(private route: ActivatedRoute, private router: Router, private userService: UserService) {
-    this.user = new User();
+  constructor(private router: Router,
+    private loginService: AuthService) { }
+
+  ngOnInit() {
   }
 
   onSubmit() {
-    this.userService.findOne(this.user).subscribe(result => this.gotoProfile());
-  }
-
-  gotoProfile() {
-    this.router.navigate(['/user/profile']);
+    if (this.loginService.authenticate(this.usernameText, this.passwordText)
+    ) {
+      this.router.navigate(['']);
+      this.invalidLogin = false;
+    } else
+      this.invalidLogin = true;
   }
 }

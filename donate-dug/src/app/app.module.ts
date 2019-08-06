@@ -7,12 +7,18 @@ import { AppComponent } from './app.component';
 import { RegisterFormComponent } from './components/register-form/register-form.component';
 import { UserService } from './services/user-service.service';
 import { LoginFormComponent } from './components/login-form/login-form.component';
+import { LogoutComponent } from './components/logout/logout.component';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RegisterFormComponent,
     LoginFormComponent,
+    LogoutComponent,
+    HeaderComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

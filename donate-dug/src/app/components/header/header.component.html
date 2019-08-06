@@ -1,0 +1,14 @@
+<header>
+  <nav class ="navbar navbar-expand-md navbar-light bg-light">
+  <div><a href="#" class="navbar-brand">Donate DUG</a></div>
+  
+  <ul class="navbar-nav">
+     
+    <li><a *ngIf="loginService.isUserLoggedIn()" routerLink="/addGarden" class="nav-link">Add New Garden</a></li>
+    <li><a *ngIf="loginService.isUserLoggedIn()" routerLink="/addPlot" class="nav-link">Add New Plot</a></li>
+    <li><a *ngIf="!loginService.isUserLoggedIn()" routerLink="/auth/login" class="nav-link">Login</a></li>
+    <li><a *ngIf="loginService.isUserLoggedIn()" routerLink="/auth/logout" class="nav-link">LogOut</a></li>
+  
+  </ul>
+  </nav>
+</header>

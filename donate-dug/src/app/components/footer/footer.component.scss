@@ -1,0 +1,16 @@
+.footer {
+  position: relative;
+  text-align: center;
+  bottom: 0;
+  width:100%;
+  height: 56px;
+  display: table;
+  margin: auto;
+  border-radius: .25rem; 
+  border: 1px solid rgba(0,0,0,.125);
+}
+
+.container {
+  display: table-cell;
+  vertical-align: middle
+}

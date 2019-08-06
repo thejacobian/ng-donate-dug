@@ -2,7 +2,7 @@
   <div class="card-body">
     <form (ngSubmit)="onSubmit()" #userForm="ngForm">
       <div class="form-group">
-        <label for="name">Username</label>
+        <label for="username">Username</label>
         <input type="text" [(ngModel)]="user.username" 
           class="form-control" id="username" name="username" placeholder="Enter your username"
           required #username="ngModel">
@@ -12,17 +12,17 @@
           class="form-control" id="email" name="email" placeholder="Enter your email address"
           required #email="ngModel">
         <div [hidden]="!email.pristine" class="alert alert-danger">Email is required</div>
-        <label for="email">Password</label>
+        <label for="password">Password</label>
         <input type="text" [(ngModel)]="user.password" 
           class="form-control" id="password" name="password" placeholder="Enter your password"
           required #password="ngModel">
         <div [hidden]="!password.pristine" class="alert alert-danger">Password is required</div>
-        <label for="email">Zipcode</label>
+        <label for="zipcode">Zipcode</label>
         <input type="text" [(ngModel)]="user.zipcode" 
           class="form-control" id="zipcode" name="zipcode" placeholder="Enter your zipcode"
           required #zipcode="ngModel">
         <div [hidden]="!zipcode.pristine" class="alert alert-danger">Zipcode is required</div>
-        <label for="email">Non-profit Organization</label>
+        <label for="organization">Non-profit Organization</label>
         <input type="text" [(ngModel)]="user.organization" 
           class="form-control" id="organization" name="organization" placeholder="Enter your organization (if applicable)"
           #organization="ngModel">
